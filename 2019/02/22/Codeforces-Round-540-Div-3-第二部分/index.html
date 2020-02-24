@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="做题笔记之Codeforces Round #540 (Div. 3) 第二部分 比赛链接: Codeforces   题解链接: Codeforces  除了F2之外全部补全，宿舍太冷了。  D1 - Coffee and Coursework (Easy version)  一开始这题我觉得用贪心不可行，因为存在损耗这一说，效果好的完全可以留到第二天，但是dp又写不出一个好的方法。参考题解的贪">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round #540 (Div. 3) 第二部分">
+<meta property="og:url" content="http://yoursite.com/2019/02/22/Codeforces-Round-540-Div-3-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/index.html">
+<meta property="og:site_name" content="日记本">
+<meta property="og:description" content="做题笔记之Codeforces Round #540 (Div. 3) 第二部分 比赛链接: Codeforces   题解链接: Codeforces  除了F2之外全部补全，宿舍太冷了。  D1 - Coffee and Coursework (Easy version)  一开始这题我觉得用贪心不可行，因为存在损耗这一说，效果好的完全可以留到第二天，但是dp又写不出一个好的方法。参考题解的贪">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2019/02/22/Codeforces-Round-540-Div-3-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/pic.png">
+<meta property="article:published_time" content="2019-02-22T05:35:13.000Z">
+<meta property="article:modified_time" content="2020-02-24T04:32:31.539Z">
+<meta property="article:author" content="贺梦杰">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/22/Codeforces-Round-540-Div-3-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/pic.png">
+
+<link rel="canonical" href="http://yoursite.com/2019/02/22/Codeforces-Round-540-Div-3-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Codeforces Round #540 (Div. 3) 第二部分 | 日记本</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">日记本</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/Codeforces-Round-540-Div-3-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="贺梦杰">
+      <meta itemprop="description" content="贺梦杰的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="日记本">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Codeforces Round #540 (Div. 3) 第二部分
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-22 13:35:13" itemprop="dateCreated datePublished" datetime="2019-02-22T13:35:13+08:00">2019-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-24 12:32:31" itemprop="dateModified" datetime="2020-02-24T12:32:31+08:00">2020-02-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="做题笔记之Codeforces-Round-540-Div-3-第二部分"><a href="#做题笔记之Codeforces-Round-540-Div-3-第二部分" class="headerlink" title="做题笔记之Codeforces Round #540 (Div. 3) 第二部分"></a><strong>做题笔记之Codeforces Round #540 (Div. 3) 第二部分</strong></h1><blockquote>
+<p>比赛链接: <a href="http://codeforces.com/contest/1118" target="_blank" rel="noopener">Codeforces</a></p>
+</blockquote>
+<blockquote>
+<p>题解链接: <a href="http://codeforces.com/blog/entry/65396" target="_blank" rel="noopener">Codeforces</a></p>
+</blockquote>
+<p>除了F2之外全部补全，宿舍太冷了。</p>
+<blockquote>
+<p>D1 - <em>Coffee and Coursework (Easy version)</em></p>
+</blockquote>
+<p>一开始这题我觉得用贪心不可行，因为存在损耗这一说，效果好的完全可以留到第二天，但是dp又写不出一个好的方法。参考题解的贪心思路，是每次取最大的k个元素放入k天，枚举天数来实现的。<br>因为数据规模小，可以枚举一遍过。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 105</span></span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> day)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//取最大的k个元素为 每天第一杯</span></span><br><span class="line">	<span class="comment">//取次大的k个元素为 每天第二杯</span></span><br><span class="line">	<span class="comment">//如此往复</span></span><br><span class="line">	<span class="comment">//根据从大到小的顺序</span></span><br><span class="line">	<span class="comment">//a0 ak ...</span></span><br><span class="line">	<span class="comment">//a1 ak+1 ...</span></span><br><span class="line">	<span class="comment">//a2 ak+2 ...</span></span><br><span class="line">	<span class="comment">//ak-1 ak+3 ...</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cur += <span class="built_in">max</span>(<span class="number">0</span>, a[i] - i / day); <span class="comment">//k个一组</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (cur &gt;= m)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//一天可以喝多杯 但效果递减直到效果降为0 等待第二天 求最少天数</span></span><br><span class="line">		<span class="comment">//贪心 先喝效果最好的喝到没效果 等第二天？ 但是会浪费一部分效果  不如留到第二天充分发挥</span></span><br><span class="line">		<span class="comment">//dp? 递推方程怎么写? <span class="doctag">TODO:</span>根据tag  并非dp而是贪心 为何？</span></span><br><span class="line">		<span class="comment">//贪心角度来考虑，一天要写尽可能多的页数 如何应对样例345</span></span><br><span class="line">		<span class="comment">//有可行解</span></span><br><span class="line">		<span class="comment">//根据题解 n不超过100 枚举每一天能否写完即可</span></span><br><span class="line">		sort(a, a + n, greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">		<span class="keyword">int</span> ans = N;</span><br><span class="line">		<span class="keyword">int</span> finish = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="comment">//最多n天</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (judge(i))</span><br><span class="line">			&#123;</span><br><span class="line">				ans = <span class="built_in">min</span>(ans, i);</span><br><span class="line">				finish = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;<span class="comment">//找到就退出</span></span><br><span class="line">            &#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (finish)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>D2 - <em>Coffee and Coursework (Hard Version)</em></p>
+</blockquote>
+<p>很明显数据范围达到2<em>10^5 再枚举显然超时，很容易想到用*</em>二分搜索**来降低复杂度。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, m;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> day)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> cur = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//取最大的k个元素为 每天第一杯</span></span><br><span class="line">    <span class="comment">//取次大的k个元素为 每天第二杯</span></span><br><span class="line">    <span class="comment">//如此往复</span></span><br><span class="line">    <span class="comment">//根据从大到小的顺序</span></span><br><span class="line">    <span class="comment">//a0 ak ...</span></span><br><span class="line">    <span class="comment">//a1 ak+1 ...</span></span><br><span class="line">    <span class="comment">//a2 ak+2 ...</span></span><br><span class="line">    <span class="comment">//ak-1 ak+3 ...</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cur += <span class="built_in">max</span>((<span class="keyword">long</span> <span class="keyword">long</span>)<span class="number">0</span>, a[i] - i / day); <span class="comment">//k个一组</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cur &gt;= m)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//数据范围增大 遍历是否可行？</span></span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = N;</span><br><span class="line">        <span class="keyword">bool</span> finish = <span class="literal">false</span>;</span><br><span class="line">        sort(a, a + n, greater&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;());</span><br><span class="line">        <span class="comment">//减少遍历次数 采用二分搜索</span></span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> left=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> right=N;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> mid;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)</span><br><span class="line">        &#123;</span><br><span class="line">            mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(judge(mid))</span><br><span class="line">            &#123;</span><br><span class="line">                ans = <span class="built_in">min</span>(ans, mid);</span><br><span class="line">                finish = <span class="literal">true</span>;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (finish)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>E - <em>Yet Another Ball Problem</em></p>
+</blockquote>
+<p>构造算法 输出满足规则的二元组。<br>我的构造是根据dis距离来的，WA四次后，加了一个pre pair，如果现在输出的会违反相邻不等的规则，调换输出顺序即可，<br>具体可以看我的实现。<br>题解的实现很简洁巧妙，比我废了老大劲改出来的简单有效。<br>关于满足规则的证明，可以自己跑下输出看结果。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">using namespace std;</span></span><br><span class="line"><span class="comment">#define N 200020</span></span><br><span class="line"><span class="comment">long long n, k;</span></span><br><span class="line"><span class="comment">//配对：最多C[k][2]*2种二元有序对 max=k*k(k-1)/2;</span></span><br><span class="line"><span class="comment">int main()</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    ios::sync_with_stdio(false);</span></span><br><span class="line"><span class="comment">    cin.tie(0);</span></span><br><span class="line"><span class="comment">    while (cin &gt;&gt; n &gt;&gt; k)</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        long long max_kinds = k * (k - 1);</span></span><br><span class="line"><span class="comment">        if (n &gt; max_kinds)</span></span><br><span class="line"><span class="comment">        &#123;</span></span><br><span class="line"><span class="comment">            cout &lt;&lt; "NO" &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">            continue;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        else</span></span><br><span class="line"><span class="comment">        &#123;</span></span><br><span class="line"><span class="comment">            cout &lt;&lt; "YES" &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">            int cnt = 0;</span></span><br><span class="line"><span class="comment">            int dis = 1; //代表间距</span></span><br><span class="line"><span class="comment">            int left = 1;</span></span><br><span class="line"><span class="comment">            int right;</span></span><br><span class="line"><span class="comment">            bool flag = false;</span></span><br><span class="line"><span class="comment">            pair&lt;int, int&gt; pre;</span></span><br><span class="line"><span class="comment">            while (cnt &lt; n)</span></span><br><span class="line"><span class="comment">            &#123;</span></span><br><span class="line"><span class="comment">                right = left + dis;</span></span><br><span class="line"><span class="comment">                if (left &lt;= k &amp;&amp; right &lt;= k &amp;&amp; left &gt; 0 &amp;&amp; right &gt; 0 &amp;&amp; left != right)</span></span><br><span class="line"><span class="comment">                &#123;</span></span><br><span class="line"><span class="comment">                    flag = pre.first == left || pre.second == right;</span></span><br><span class="line"><span class="comment">                    if (flag)</span></span><br><span class="line"><span class="comment">                        cout &lt;&lt; right &lt;&lt; " " &lt;&lt; left &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">                    else</span></span><br><span class="line"><span class="comment">                        cout &lt;&lt; left &lt;&lt; " " &lt;&lt; right &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">                    cnt++;</span></span><br><span class="line"><span class="comment">                    if (cnt &gt;= n)</span></span><br><span class="line"><span class="comment">                        break;</span></span><br><span class="line"><span class="comment">                    if (!flag)</span></span><br><span class="line"><span class="comment">                    &#123;</span></span><br><span class="line"><span class="comment">                        cout &lt;&lt; right &lt;&lt; " " &lt;&lt; left &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">                        pre.first = right;</span></span><br><span class="line"><span class="comment">                        pre.second = left;</span></span><br><span class="line"><span class="comment">                    &#125;</span></span><br><span class="line"><span class="comment">                    else</span></span><br><span class="line"><span class="comment">                    &#123;</span></span><br><span class="line"><span class="comment">                        cout &lt;&lt; left &lt;&lt; " " &lt;&lt; right &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">                        pre.first = left;</span></span><br><span class="line"><span class="comment">                        pre.second = right;</span></span><br><span class="line"><span class="comment">                    &#125;</span></span><br><span class="line"><span class="comment">                    cnt++;</span></span><br><span class="line"><span class="comment">                    if (cnt &gt;= n)</span></span><br><span class="line"><span class="comment">                        break;</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">                else</span></span><br><span class="line"><span class="comment">                &#123;</span></span><br><span class="line"><span class="comment">                    //溢出范围</span></span><br><span class="line"><span class="comment">                    //修改间距</span></span><br><span class="line"><span class="comment">                    left = 0;</span></span><br><span class="line"><span class="comment">                    dis++;</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">                left++;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//<span class="doctag">TODO:</span>题解</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &gt; k * (k - <span class="number">1</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                cur += (i % k == <span class="number">0</span>);</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i % k + <span class="number">1</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; (cur + i % k) % k + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="comment">//左边循环是1.2...k的重复循环 右边循环是+cur%k的循环</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>F1 - <em>Tree Cutting (Easy Version)</em></p>
+</blockquote>
+<p>树的结构与DFS<br>一开始我的做法是枚举删除的边，用DFS探索两边是否符合条件，提交再样例12处超时，后来考虑用记忆化搜索，改了很久，始终调不出来，可能我的写法存在问题不好实现。<br>参考题解<br><strong>O(n)</strong><br>的复杂度让我吓了一跳，英文题解可能写的不好懂，自己对着样子模拟一下递归调用就可以理解了。非常巧妙的递归调用，值得学习。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 300030</span></span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; V[N];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> redp;</span><br><span class="line"><span class="keyword">int</span> bluep;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line">pair&lt;int, int&gt; DFS(int start, int pre = -1)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> red = (a[start] == <span class="number">1</span>);<span class="comment">//以start点为起点 先初始化颜色点数量</span></span><br><span class="line">    <span class="keyword">int</span> blue = (a[start] == <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> ele : V[start])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ele!=pre)<span class="comment">//向子结点DFS</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> temp = DFS(ele, start);</span><br><span class="line">            <span class="comment">//如果子结点的蓝色数量为0 且 子结点的红色数量最大</span></span><br><span class="line">            ans += (temp.second == <span class="number">0</span>) &amp;&amp; (temp.first == redp);</span><br><span class="line">            <span class="comment">//如果子结点的红色数量为0 且 子结点的蓝色数量最大</span></span><br><span class="line">            ans += (temp.first == <span class="number">0</span>) &amp;&amp; (temp.second == bluep);</span><br><span class="line">            red += temp.first;<span class="comment">//更新颜色点数量</span></span><br><span class="line">            blue += temp.second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> make_pair(red, blue);<span class="comment">//返回颜色点数量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            V[i].<span class="built_in">clear</span>();</span><br><span class="line">        redp = bluep = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">            redp += (a[i] == <span class="number">1</span>);</span><br><span class="line">            bluep += (a[i] == <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> u, v;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">            V[u].push_back(v);</span><br><span class="line">            V[v].push_back(u); <span class="comment">//建图</span></span><br><span class="line">        &#125;</span><br><span class="line">        ans = <span class="number">0</span>;</span><br><span class="line">        DFS(<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结一下这次Div.3的题目，实际比赛里卡在回文矩阵那里做出两道，比Div.2做出一道有进步哈哈。不过也挺开心的起码从绿名爬回了青名。继续努力吧！</p>
+<p><img src="pic.png" alt="我爬回来辣"></p>
+<pre><code>我是小师妹，不足之处欢迎指正！</code></pre>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/21/Codeforces-Round-540-Div-3-%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86/" rel="prev" title="Codeforces Round #540 (Div. 3) 第一部分">
+      <i class="fa fa-chevron-left"></i> Codeforces Round #540 (Div. 3) 第一部分
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/24/Codeforces-Round-539-Div-2/" rel="next" title="Codeforces Round #539 (Div. 2)">
+      Codeforces Round #539 (Div. 2) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#做题笔记之Codeforces-Round-540-Div-3-第二部分"><span class="nav-number">1.</span> <span class="nav-text">做题笔记之Codeforces Round #540 (Div. 3) 第二部分</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="贺梦杰"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">贺梦杰</p>
+  <div class="site-description" itemprop="description">贺梦杰的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Fomalhauthmj" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Fomalhauthmj" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:njtech_hemengjie@qq.com" title="E-Mail → mailto:njtech_hemengjie@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://emsweet.github.io/" title="https:&#x2F;&#x2F;emsweet.github.io&#x2F;" rel="noopener" target="_blank">女友emsweet</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">贺梦杰</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

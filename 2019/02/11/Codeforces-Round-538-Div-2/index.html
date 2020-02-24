@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="做题笔记之Codeforces Round #538 (Div. 2) 比赛链接：Codeforces   题解链接：Codeforces  每次做这种比赛基本就拿个签到题的分，然后就开始学习英语，自己还是太弱了。  A - Got Any Grapes?  阅读理解 看懂题目以后写三个限制条件就可以了。 1234567891011121314151617181920212223242526272">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round #538 (Div. 2)">
+<meta property="og:url" content="http://yoursite.com/2019/02/11/Codeforces-Round-538-Div-2/index.html">
+<meta property="og:site_name" content="日记本">
+<meta property="og:description" content="做题笔记之Codeforces Round #538 (Div. 2) 比赛链接：Codeforces   题解链接：Codeforces  每次做这种比赛基本就拿个签到题的分，然后就开始学习英语，自己还是太弱了。  A - Got Any Grapes?  阅读理解 看懂题目以后写三个限制条件就可以了。 1234567891011121314151617181920212223242526272">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-02-11T07:00:06.000Z">
+<meta property="article:modified_time" content="2020-02-24T04:32:31.539Z">
+<meta property="article:author" content="贺梦杰">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/02/11/Codeforces-Round-538-Div-2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Codeforces Round #538 (Div. 2) | 日记本</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">日记本</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/Codeforces-Round-538-Div-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="贺梦杰">
+      <meta itemprop="description" content="贺梦杰的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="日记本">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Codeforces Round #538 (Div. 2)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-11 15:00:06" itemprop="dateCreated datePublished" datetime="2019-02-11T15:00:06+08:00">2019-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-24 12:32:31" itemprop="dateModified" datetime="2020-02-24T12:32:31+08:00">2020-02-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="做题笔记之Codeforces-Round-538-Div-2"><a href="#做题笔记之Codeforces-Round-538-Div-2" class="headerlink" title="做题笔记之Codeforces Round #538 (Div. 2)"></a><strong>做题笔记之Codeforces Round #538 (Div. 2)</strong></h1><blockquote>
+<p>比赛链接：<a href="http://codeforces.com/contest/1114" target="_blank" rel="noopener">Codeforces</a></p>
+</blockquote>
+<blockquote>
+<p>题解链接：<a href="https://codeforces.com/blog/entry/65136" target="_blank" rel="noopener">Codeforces</a></p>
+</blockquote>
+<p>每次做这种比赛基本就拿个签到题的分，然后就开始学习英语，自己还是太弱了。</p>
+<blockquote>
+<p>A - <em>Got Any Grapes?</em></p>
+</blockquote>
+<p>阅读理解 看懂题目以后写三个限制条件就可以了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> x, y, z, a, b, c;</span><br><span class="line">    <span class="comment">//a green b purple c black</span></span><br><span class="line">    <span class="comment">//x green y green/purple z all</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; z &gt;&gt; a &gt;&gt; b &gt;&gt; c)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a &lt; x)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            a -= x;</span><br><span class="line">        <span class="keyword">int</span> remain;</span><br><span class="line">        <span class="keyword">if</span> (a + b &lt; y)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            remain = a + b - y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (remain + c &lt; z)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>B - <em>Yet Another Array Partitioning Task</em></p>
+</blockquote>
+<p>这题开始我就在欣赏英语了。<br>一开始觉得这是最大m子段和类型的问题，于是对着网上模板开始写，由于动态规划掌握得不好，始终写不出来。对着样例数据发呆的时候突然发现选出的答案和就是最大的m*k个元素和，似乎发现了什么。那么问题就变成了如何划分了。结果到比赛快结束时才有了一个从头到尾的划分方法。<br>夜深了，准备第二天起来再写，睡不着的时候想想越觉得这种方法是可行的。<br>第二天先按自己的想法写了提交，AC。</p>
+<p><strong>我的方案是先排序取出最大的m*k个元素累加得到最大和，然后用map建立一个映射表用于划分，然后再按原始顺序逐个扫描，如果映射值大于0，当前段选取数量加1，映射值-1，当前段选取数量达到m时，段数量+1，段选取数量置0，输出当前位置。</strong><br>英文题解中提到相较于O(nlogn)的排序还有一种更优的O(n)的部分有序方法，<strong>nth_element()</strong>，它能将第n大的元素排在第n个位置，在它之前的元素均小于它，在它之后的元素均大于它。<br>不过根据我的实际测试排序方法对于测试时间的影响不是很大。<br>后面的划分方法反而影响相对更大，我写的划分方案应该相对容易理解，参考题解的划分方法可以自行理解，<strong>题解中指出事实上这种最理想的选取最大m*k个元素的方案是恒成立的</strong>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></span><br><span class="line"><span class="keyword">int</span> n, m, k;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[N];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> b[N];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>, <span class="keyword">int</span>&gt; M;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; k)</span><br><span class="line">    &#123;</span><br><span class="line">        M.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">            b[i] = a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        sort(b, b + n, greater&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m * k; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            ans += b[i];</span><br><span class="line">            M[b[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        nth_element(b, b + n-m*k, b + n);</span></span><br><span class="line"><span class="comment">        for (int i =n- m*k; i &lt;n; i++)</span></span><br><span class="line"><span class="comment">        &#123;</span></span><br><span class="line"><span class="comment">            ans += b[i];</span></span><br><span class="line"><span class="comment">            M[b[i]]++;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//如何划分</span></span><br><span class="line">        <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>; <span class="comment">//记录当前段已选数量</span></span><br><span class="line">        <span class="keyword">int</span> seg_cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (pos &lt; n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (M[a[pos]] &gt; <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                M[a[pos]]--;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt == m)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; pos + <span class="number">1</span>;</span><br><span class="line">                cnt = <span class="number">0</span>;</span><br><span class="line">                seg_cnt++;</span><br><span class="line">                <span class="keyword">if</span> (seg_cnt != k - <span class="number">1</span>)</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            pos++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//参考题解</span></span><br><span class="line"><span class="comment">// #include &lt;algorithm&gt;</span></span><br><span class="line"><span class="comment">// #include &lt;cstring&gt;</span></span><br><span class="line"><span class="comment">// #include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">// #define N 200020</span></span><br><span class="line"><span class="comment">// using namespace std;</span></span><br><span class="line"><span class="comment">// int n, m, k;</span></span><br><span class="line"><span class="comment">// struct node</span></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     long long val;</span></span><br><span class="line"><span class="comment">//     int pos;</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"><span class="comment">// bool cmp(node &amp;n1, node &amp;n2)</span></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     return n1.val &gt; n2.val;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// node ns[N];</span></span><br><span class="line"><span class="comment">// bool vis[N];</span></span><br><span class="line"><span class="comment">// int main()</span></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     ios::sync_with_stdio(false);</span></span><br><span class="line"><span class="comment">//     cin.tie(0);</span></span><br><span class="line"><span class="comment">//     while (cin &gt;&gt; n &gt;&gt; m &gt;&gt; k)</span></span><br><span class="line"><span class="comment">//     &#123;</span></span><br><span class="line"><span class="comment">//         for (int i = 0; i &lt; n; i++)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line"><span class="comment">//             cin &gt;&gt; ns[i].val;</span></span><br><span class="line"><span class="comment">//             ns[i].pos = i + 1;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         sort(ns, ns + n, cmp);</span></span><br><span class="line"><span class="comment">//         long long ans = 0;</span></span><br><span class="line"><span class="comment">//         memset(vis, 0, sizeof(vis));</span></span><br><span class="line"><span class="comment">//         for (int i = 0; i &lt; m * k; i++)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line"><span class="comment">//             ans += ns[i].val;</span></span><br><span class="line"><span class="comment">//             vis[ns[i].pos] = 1;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         cout &lt;&lt; ans &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">//         int cnt = 0;</span></span><br><span class="line"><span class="comment">//         int seg_cnt = 0;</span></span><br><span class="line"><span class="comment">//         for (int i = 1; i &lt;= n; i++)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line"><span class="comment">//             if (seg_cnt == k - 1)</span></span><br><span class="line"><span class="comment">//                 break;</span></span><br><span class="line"><span class="comment">//             if (vis[i])</span></span><br><span class="line"><span class="comment">//                 cnt++;</span></span><br><span class="line"><span class="comment">//             if (cnt == m)</span></span><br><span class="line"><span class="comment">//             &#123;</span></span><br><span class="line"><span class="comment">//                 cnt = 0;</span></span><br><span class="line"><span class="comment">//                 seg_cnt++;</span></span><br><span class="line"><span class="comment">//                 cout &lt;&lt; i &lt;&lt; " ";</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         cout &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>C - <em>Trailing Loves (or L’oeufs?)</em></p>
+</blockquote>
+<p>题意大概是求出n!在b进制下的后缀0数量。<br>这题我没有什么好的想法，n!,b的数据范围太大了。<br>只能参考英文题解。<br><strong>The problem can be reduced to the following: finding the maximum r that n ! is divisible by b^r.</strong><br>这句话相当于将题目转化为了质因子分解问题。</p>
+<p><em>以下是我的理解，十进制下末尾0数量来源与这个数能被10^r整除的最大r值，以此类比到b进制，具体的公式推导可以参考英文题解</em></p>
+<p><strong>这里只对使用的对n!求某个质因子的指数的方法做介绍</strong><br>相比较于原始的累乘其复杂度显然不可行。<br>这里给出一种比较高效的算法:</p>
+<pre><code>n!=1*2*3*……*(n-2)*(n-1)*n
+
+可以表示成所有和m倍数有关的乘积再乘以其他和m没有关系的
+
+=(m*2m*3m*......*km)*ohter     
+other是不含m因子的数的乘积   因为 km&lt;=n 而k肯定是最大值  所以k=n/m
+
+=m^k*(1*2*......*k)*other  
+
+=m^k*k!*other*　</code></pre><p>从这个表达式中可以提取出m^k，然后按照相同的方法循环下去可以求出k!中因子m的指数。每次求出m的指数的和就是n!中因子m的总指数。<br><a href="https://blog.csdn.net/seadplus/article/details/7401113" target="_blank" rel="noopener">参考文章</a> </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, b;</span><br><span class="line"><span class="comment">//计算b进制下的n!的末尾连续0数量</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1e18</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">2</span>;i &lt;= b; i++) <span class="comment">//对b质因子分解</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="number">1l</span>l*i*i&gt;b)<span class="comment">//注意这里写在for循环中不可行，可自行测试</span></span><br><span class="line">                i = b;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> cnt = <span class="number">0</span>; <span class="comment">//记录指数</span></span><br><span class="line">            <span class="keyword">while</span> (b % i == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                b /= i;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">continue</span>; <span class="comment">//无此质因子</span></span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> temp = n;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> k = <span class="number">0</span>; <span class="comment">//记录指数</span></span><br><span class="line">            <span class="keyword">while</span> (temp)     <span class="comment">//对n!分解 找出其含有i的指数</span></span><br><span class="line">            &#123;</span><br><span class="line">                k += temp / i;</span><br><span class="line">                temp = temp / i;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, k / cnt);<span class="comment">//取最小是保证b^r的统一</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>我是小师妹，不足之处欢迎指正！</code></pre>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/02/%E5%B0%8F%E5%B8%88%E5%A6%B9%E7%9A%84%E6%97%A5%E8%AE%B0/" rel="prev" title="第一天日记">
+      <i class="fa fa-chevron-left"></i> 第一天日记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/13/Codeforces-Global-Round-1/" rel="next" title="Codeforces Global Round 1">
+      Codeforces Global Round 1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#做题笔记之Codeforces-Round-538-Div-2"><span class="nav-number">1.</span> <span class="nav-text">做题笔记之Codeforces Round #538 (Div. 2)</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="贺梦杰"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">贺梦杰</p>
+  <div class="site-description" itemprop="description">贺梦杰的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Fomalhauthmj" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Fomalhauthmj" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:njtech_hemengjie@qq.com" title="E-Mail → mailto:njtech_hemengjie@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://emsweet.github.io/" title="https:&#x2F;&#x2F;emsweet.github.io&#x2F;" rel="noopener" target="_blank">女友emsweet</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">贺梦杰</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
