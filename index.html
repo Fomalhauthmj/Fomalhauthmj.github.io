@@ -187,7 +187,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-29 17:45:19" itemprop="dateModified" datetime="2020-02-29T17:45:19+08:00">2020-02-29</time>
+                <time title="修改时间：2020-03-01 15:43:19" itemprop="dateModified" datetime="2020-03-01T15:43:19+08:00">2020-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,7 +253,10 @@
 <li>对堆化序列排序，重复地取出根与最后一个节点交换，把该节点移出堆后对剩余部分重新调整堆化，时间复杂度为$O(nlogn)$。</li>
 </ol>
 <p>其总体时间复杂度为$O(nlogn)$，且为不稳定排序。</p>
-<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="table-container">
+<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><p>大体思想是将待排序值域分为若干个桶，将元素分配到不同的桶中，在各个桶中进行稳定的内部排序（如插入排序），最后将各个桶内数据连接得到排好序的序列。在数据均匀分布的情况下，桶排序的期望时间复杂度为$O(n)$。</p>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>希尔排序是插入排序的一种更为高效的改进版本，且是一种非稳定排序方法。</p>
+<p>大体思想是从大步长到小步长（最后步长为1，即普通的插入排序）逐渐进行插入排序，其时间复杂度根据所选择不同步长序列而不同。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -305,12 +308,13 @@
 </tr>
 <tr>
 <td style="text-align:center"><strong>桶排序</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">$O(n)$</td>
+<td style="text-align:center">✅</td>
 </tr>
 <tr>
 <td style="text-align:center"><strong>希尔排序</strong></td>
 <td style="text-align:center"></td>
+<td style="text-align:center">❌</td>
 </tr>
 </tbody>
 </table>
