@@ -156,7 +156,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://fomalhauthmj.github.io/2020/03/07/Missing%20Semester%20(2020)%20Lecture%201%20&%20Lecture%202%20%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://fomalhauthmj.github.io/2020/03/07/Missing%20Semester%20(2020)%20Lecture%20%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -170,7 +170,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/07/Missing%20Semester%20(2020)%20Lecture%201%20&%20Lecture%202%20%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Missing Semester (2020) Lecture 1 & Lecture 2 笔记</a>
+            <a href="/2020/03/07/Missing%20Semester%20(2020)%20Lecture%20%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Missing Semester (2020) Lecture 笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -179,10 +179,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-07 17:15:52 / 修改时间：18:05:17" itemprop="dateCreated datePublished" datetime="2020-03-07T17:15:52+08:00">2020-03-07</time>
+              <time title="创建时间：2020-03-07 17:15:52" itemprop="dateCreated datePublished" datetime="2020-03-07T17:15:52+08:00">2020-03-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-08 22:55:53" itemprop="dateModified" datetime="2020-03-08T22:55:53+08:00">2020-03-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -204,17 +210,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Missing-Semester-2020-Lecture-1-amp-Lecture-2-笔记"><a href="#Missing-Semester-2020-Lecture-1-amp-Lecture-2-笔记" class="headerlink" title="Missing Semester (2020) Lecture 1 &amp; Lecture 2 笔记"></a>Missing Semester (2020) Lecture 1 &amp; Lecture 2 笔记</h1><blockquote>
+          <h1 id="Missing-Semester-2020-Lecture-笔记"><a href="#Missing-Semester-2020-Lecture-笔记" class="headerlink" title="Missing Semester (2020) Lecture 笔记"></a>Missing Semester (2020) Lecture 笔记</h1><blockquote>
 <p>前言：此系列为对应课程习题的笔记。</p>
 </blockquote>
 <p><a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener">课程链接</a></p>
-<h2 id="Lecture-1-Course-overview-the-shell"><a href="#Lecture-1-Course-overview-the-shell" class="headerlink" title="Lecture 1:Course overview + the shell"></a>Lecture 1:Course overview + the shell</h2><p><a href="https://missing.csail.mit.edu/2020/course-shell/" target="_blank" rel="noopener">Lecture1课程材料</a></p>
-<h3 id="Exercises选析"><a href="#Exercises选析" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><blockquote>
+<h2 id="Lecture-1-Course-overview-the-shell"><a href="#Lecture-1-Course-overview-the-shell" class="headerlink" title="Lecture 1:Course overview + the shell"></a>Lecture 1:Course overview + the shell</h2><h3 id="Exercises选析"><a href="#Exercises选析" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><blockquote>
 <p><strong>10.</strong> Write a command that reads out your laptop battery’s power level or your desktop machine’s CPU temperature from <code>/sys</code>. Note: if you’re a macOS user, your OS doesn’t have sysfs, so you can skip this exercise.</p>
 </blockquote>
 <p>我使用的环境是WSL+VSCode，与真实系统环境有所区别，不过还是能找到一些硬件信息，例如💻🔋。</p>
-<h2 id="Lecture-2-Shell-Tools-and-Scripting"><a href="#Lecture-2-Shell-Tools-and-Scripting" class="headerlink" title="Lecture 2:Shell Tools and Scripting"></a>Lecture 2:Shell Tools and Scripting</h2><p><a href="https://missing.csail.mit.edu/2020/shell-tools/" target="_blank" rel="noopener">Lecture2课程材料</a></p>
-<h3 id="Exercises选析-1"><a href="#Exercises选析-1" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><blockquote>
+<h2 id="Lecture-2-Shell-Tools-and-Scripting"><a href="#Lecture-2-Shell-Tools-and-Scripting" class="headerlink" title="Lecture 2:Shell Tools and Scripting"></a>Lecture 2:Shell Tools and Scripting</h2><h3 id="Exercises选析-1"><a href="#Exercises选析-1" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><blockquote>
 <p><strong>2.</strong> Write bash functions <code>marco</code> and <code>polo</code> that do the following. Whenever you execute <code>marco</code> the current working directory should be saved in some manner, then when you execute <code>polo</code>, no matter what directory you are in, <code>polo</code> should <code>cd</code> you back to the directory where you executed <code>marco</code>. For ease of debugging you can write the code in a file <code>marco.sh</code> and (re)load the definitions to your shell by executing <code>source marco.sh</code>.</p>
 </blockquote>
 <p>注意写<strong>function</strong>，否则无法通过<code>source</code>装载到shell中执行。</p>
@@ -234,6 +238,12 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find <span class="built_in">test</span> -<span class="built_in">type</span> f | xargs -d <span class="string">'\n'</span>  ls -l -t</span><br></pre></td></tr></table></figure>
 <p>通过<code>find</code>完成递归查找文件，这里只查找普通文件，然后传入<code>ls</code>按照时间顺序排列。</p>
+<h2 id="Lecture-3-Editors-Vim"><a href="#Lecture-3-Editors-Vim" class="headerlink" title="Lecture 3:Editors (Vim)"></a>Lecture 3:Editors (Vim)</h2><h3 id="Exercises选析-2"><a href="#Exercises选析-2" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><h2 id="Lecture-4-Data-Wrangling"><a href="#Lecture-4-Data-Wrangling" class="headerlink" title="Lecture 4:Data Wrangling"></a>Lecture 4:Data Wrangling</h2><h3 id="Exercises选析-3"><a href="#Exercises选析-3" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><blockquote>
+<p><strong>2.</strong> Find the number of words (in <code>/usr/share/dict/words</code>) that contain at least three <code>a</code>s and don’t have a <code>&#39;s</code> ending. What are the three most common last two letters of those words? <code>sed</code>’s <code>y</code> command, or the <code>tr</code> program, may help you with case insensitivity. How many of those two-letter combinations are there? And for a challenge: which combinations do not occur?</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/share/dict/words | grep -v <span class="string">"'s$"</span> | grep <span class="string">"^.*[aA].*[aA].*[aA].*$"</span> | sed -E <span class="string">'s/.*(..)$/\1/'</span> | sort | uniq -c</span><br></pre></td></tr></table></figure>
+<p>通过两步<code>grep</code>筛选出符合要求的单词，然后<code>sed</code>提取末尾组成即可。</p>
+<p>如果要找出哪些组合没有出现，可以先把上述出现的组合保存到一个文件中，然后再写一个脚本循环查找每种组合是否在该文件中出现，根据<code>$?</code>来判断即可。</p>
 
       
     </div>
