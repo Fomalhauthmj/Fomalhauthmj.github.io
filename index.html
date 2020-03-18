@@ -187,7 +187,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-11 17:38:20" itemprop="dateModified" datetime="2020-03-11T17:38:20+08:00">2020-03-11</time>
+                <time title="修改时间：2020-03-18 22:01:19" itemprop="dateModified" datetime="2020-03-18T22:01:19+08:00">2020-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -195,7 +195,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
                 </span>
             </span>
 
@@ -238,7 +238,8 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find <span class="built_in">test</span> -<span class="built_in">type</span> f | xargs -d <span class="string">'\n'</span>  ls -l -t</span><br></pre></td></tr></table></figure>
 <p>通过<code>find</code>完成递归查找文件，这里只查找普通文件，然后传入<code>ls</code>按照时间顺序排列。</p>
-<h2 id="Lecture-3-Editors-Vim"><a href="#Lecture-3-Editors-Vim" class="headerlink" title="Lecture 3: Editors (Vim)"></a>Lecture 3: Editors (Vim)</h2><h3 id="Exercises选析-2"><a href="#Exercises选析-2" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><h2 id="Lecture-4-Data-Wrangling"><a href="#Lecture-4-Data-Wrangling" class="headerlink" title="Lecture 4: Data Wrangling"></a>Lecture 4: Data Wrangling</h2><h3 id="Exercises选析-3"><a href="#Exercises选析-3" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><blockquote>
+<h2 id="Lecture-3-Editors-Vim"><a href="#Lecture-3-Editors-Vim" class="headerlink" title="Lecture 3: Editors (Vim)"></a>Lecture 3: Editors (Vim)</h2><p>我暂时并无深入学习掌握Vim的想法。</p>
+<h2 id="Lecture-4-Data-Wrangling"><a href="#Lecture-4-Data-Wrangling" class="headerlink" title="Lecture 4: Data Wrangling"></a>Lecture 4: Data Wrangling</h2><h3 id="Exercises选析-2"><a href="#Exercises选析-2" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><blockquote>
 <p><strong>2.</strong> Find the number of words (in <code>/usr/share/dict/words</code>) that contain at least three <code>a</code>s and don’t have a <code>&#39;s</code> ending. What are the three most common last two letters of those words? <code>sed</code>’s <code>y</code> command, or the <code>tr</code> program, may help you with case insensitivity. How many of those two-letter combinations are there? And for a challenge: which combinations do not occur?</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/share/dict/words | grep -v <span class="string">"'s$"</span> | grep <span class="string">"^.*[aA].*[aA].*[aA].*$"</span> | sed -E <span class="string">'s/.*(..)$/\1/'</span> | sort | uniq -c</span><br></pre></td></tr></table></figure>
@@ -254,10 +255,11 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat boot.txt | sed -E <span class="string">'s/^\w+\b \w+\b [0-9:]&#123;8,8&#125; //'</span>| sed -E <span class="string">'s/\[[0-9]+\]//'</span> | sort | uniq -c | awk <span class="string">'$1 &lt; 3  &#123; print $0 &#125;'</span> | wc -l</span><br></pre></td></tr></table></figure>
 <p>通过<code>journalctl</code>的<code>-b</code>标记分别导出最后三次启动日志，合并为一个文件后去掉变量部分（这里只简单去掉了时间戳和<strong>PID</strong>）然后统计即可。</p>
-<h2 id="Lecture-5-Command-line-Environment"><a href="#Lecture-5-Command-line-Environment" class="headerlink" title="Lecture 5: Command-line Environment"></a>Lecture 5: Command-line Environment</h2><h3 id="Exercises选析-4"><a href="#Exercises选析-4" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><h4 id="Job-control"><a href="#Job-control" class="headerlink" title="Job control"></a>Job control</h4><h4 id="Terminal-multiplexer"><a href="#Terminal-multiplexer" class="headerlink" title="Terminal multiplexer"></a>Terminal multiplexer</h4><p>在这一部分可以体验<strong>tmux</strong>的使用。</p>
+<h2 id="Lecture-5-Command-line-Environment"><a href="#Lecture-5-Command-line-Environment" class="headerlink" title="Lecture 5: Command-line Environment"></a>Lecture 5: Command-line Environment</h2><h3 id="Exercises选析-3"><a href="#Exercises选析-3" class="headerlink" title="Exercises选析"></a>Exercises选析</h3><h4 id="Job-control"><a href="#Job-control" class="headerlink" title="Job control"></a>Job control</h4><h4 id="Terminal-multiplexer"><a href="#Terminal-multiplexer" class="headerlink" title="Terminal multiplexer"></a>Terminal multiplexer</h4><p>在这一部分可以体验<strong>tmux</strong>的使用。</p>
 <h4 id="Aliases"><a href="#Aliases" class="headerlink" title="Aliases"></a>Aliases</h4><h4 id="Dotfiles"><a href="#Dotfiles" class="headerlink" title="Dotfiles"></a>Dotfiles</h4><p>在这一部分我使用了<a href="https://github.com/anishathalye/dotbot" target="_blank" rel="noopener">Dotbot</a>来管理我的<strong>dotfiles</strong>，已经上传到<a href="https://github.com/Fomalhauthmj/dotfiles" target="_blank" rel="noopener">dotfiles仓库</a>。</p>
 <h4 id="Remote-Machines"><a href="#Remote-Machines" class="headerlink" title="Remote Machines"></a>Remote Machines</h4><p>在这一部分除了正常的密钥登陆服务器外，最有趣的是练习本地端口转发。通过本机浏览器来访问远程服务器文件，值得一试。</p>
-
+<h2 id="Lecture-6-Version-Control-Git"><a href="#Lecture-6-Version-Control-Git" class="headerlink" title="Lecture 6: Version Control (Git)"></a>Lecture 6: Version Control (Git)</h2><p>在这一节内容里可以补充对于<strong>Git</strong>的了解，例如其数据模型，练习中也指出了一些可能面临的应用场景。</p>
+<h2 id="Lecture-7-Debugging-and-Profiling"><a href="#Lecture-7-Debugging-and-Profiling" class="headerlink" title="Lecture 7: Debugging and Profiling"></a>Lecture 7: Debugging and Profiling</h2><h2 id="Lecture-8-Metaprogramming"><a href="#Lecture-8-Metaprogramming" class="headerlink" title="Lecture 8: Metaprogramming"></a>Lecture 8: Metaprogramming</h2><h2 id="Lecture-9-Security-and-Cryptography"><a href="#Lecture-9-Security-and-Cryptography" class="headerlink" title="Lecture 9: Security and Cryptography"></a>Lecture 9: Security and Cryptography</h2><h2 id="Lecture-10-Potpourri"><a href="#Lecture-10-Potpourri" class="headerlink" title="Lecture 10: Potpourri"></a>Lecture 10: Potpourri</h2><h2 id="Lecture-11-Q-amp-A"><a href="#Lecture-11-Q-amp-A" class="headerlink" title="Lecture 11: Q&amp;A"></a>Lecture 11: Q&amp;A</h2>
       
     </div>
 
@@ -307,7 +309,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-01 15:43:19" itemprop="dateModified" datetime="2020-03-01T15:43:19+08:00">2020-03-01</time>
+                <time title="修改时间：2020-03-18 20:31:06" itemprop="dateModified" datetime="2020-03-18T20:31:06+08:00">2020-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,7 +317,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
                 </span>
             </span>
 
@@ -1308,7 +1310,7 @@ other是不含m因子的数的乘积   因为 km&lt;=n 而k肯定是最大值  �
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
